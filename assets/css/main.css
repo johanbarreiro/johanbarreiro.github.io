@@ -1366,6 +1366,8 @@ input, select, textarea {
 	}
 
 		ul.contact-icons > li {
+			display: flex; /* Add this line to align items horizontally */
+			align-items: center; /* Center items vertically */
 			margin: 1.25rem 0 0 0;
 			padding-left: 0;
 		}
@@ -1955,6 +1957,64 @@ input, select, textarea {
 				opacity: 0;
 			}
 
+		/* Description sections */
+			.description {
+				display: none;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				width: 80%;
+				max-width: 600px;
+				padding: 2rem;
+				background: white;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+				transform: translate(-50%, -50%);
+				z-index: 1000;
+				border-radius: 10px;
+			}
+			
+			.description .close {
+				position: absolute;
+				top: 1rem;
+				right: 1rem;
+				text-decoration: none;
+				background: #333;
+				color: white;
+				padding: 0.5rem 1rem;
+				border-radius: 5px;
+				transition: background 0.3s ease;
+			}
+			
+			.description .close:hover {
+				background: #555;
+			}
+-------
+/* Overlay text on hover */
+			.gallery .image {
+				position: relative;
+			}
+
+			.gallery .overlay {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				background: rgba(0, 0, 0, 0.75);
+				color: white;
+				text-align: center;
+				padding: 0.5rem;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+			}
+
+			.gallery .image:hover .overlay {
+				opacity: 1;
+			}
+
+			.description:target {
+				display: block;
+			}
+
 	@media screen and (max-width: 980px) {
 
 		.gallery .modal .inner img {
@@ -2160,6 +2220,7 @@ input, select, textarea {
 		}
 
 	}
+
 
 /* Panel */
 

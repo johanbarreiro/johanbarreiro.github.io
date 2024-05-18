@@ -757,3 +757,22 @@
 					});
 
 })(jQuery);
+
+// Gallery Description Handling
+document.querySelectorAll('.gallery a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const target = this.getAttribute('href').substring(1);
+        const description = document.getElementById(target);
+        if (description) {
+            description.style.display = 'block';
+        }
+    });
+});
+
+document.querySelectorAll('.description .close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        this.parentElement.style.display = 'none';
+    });
+});
